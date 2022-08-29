@@ -1,0 +1,10 @@
+spring:
+  # MongoDB
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: appuser
+      password: appuser
+      authentication-database: poc
+      database: poc

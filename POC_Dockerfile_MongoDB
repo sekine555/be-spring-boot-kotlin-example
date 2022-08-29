@@ -1,0 +1,5 @@
+FROM mongo:4
+
+ARG LOCAL_APP_DIR="."
+
+COPY ${LOCAL_APP_DIR}/docker/db/mongo/init /docker-entrypoint-initdb.d/

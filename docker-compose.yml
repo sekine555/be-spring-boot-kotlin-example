@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  mongo:
+    image: poc-mongodb
+    container_name: poc-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: poc
+      TZ: Asia/Tokyo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./docker/db/mongo/db:/data/db
+    build:
+      context: .
+      dockerfile: ./POC_Dockerfile_MongoDB
+
+  mongo-express:
+    image: mongo-express
+    container_name: poc-mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: 'true'
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password123
+    depends_on:
+      - mongo
