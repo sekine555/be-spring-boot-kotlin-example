@@ -12,10 +12,9 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class OrderCustomRepository(private val mongoTemplate: MongoTemplate) : IOrderCustomRepository {
-    override fun fetchCountOrderByOrderIdAndUserId(orderId: String, userId: Int, orderDetailId: String): Int {
+    override fun fetchCountOrderByOrderIdAndUserId(orderId: String, userId: Int, orderDetailId: String): Long {
         val query = buildQuery(orderId, userId, orderDetailId)
-        val orderEntityList = mongoTemplate.find(query, OrderEntity::class.java)
-        return orderEntityList.size
+        return mongoTemplate.count(query, OrderEntity::class.java)
     }
 
     override fun updateOrderProductByOrderIdAndUserId(

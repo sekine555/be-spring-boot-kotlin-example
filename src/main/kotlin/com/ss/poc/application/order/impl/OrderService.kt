@@ -18,7 +18,7 @@ class OrderService(private val orderCustomRepository: IOrderCustomRepository) : 
                 command.orderDetailId
             )
         // データなし or 2件以上存在する場合にはシステム異常としてスローさせる
-        if (orderCount != 1) {
+        if (orderCount != 1L) {
             throw RuntimeException("対象データが存在しないか2件以上存在します >>> orderId: ${command.orderId} / userId: ${command.userId} / orderDetailId: ${command.orderDetailId}")
         }
 
