@@ -1,11 +1,12 @@
 [
   {
+    "orderId": "ede66c43-9b9d-4222-93ed-5f11c96e08e2",
+    "orderDate": "2022-08-30 10:00:00",
     "userId": 1,
     "userName": "poc taro",
-    "orders": [
+    "orderDetails": [
       {
-        "orderId": "ede66c43-9b9d-4222-93ed-5f11c96e08e2",
-        "orderDate": "2022-08-30 10:00:00",
+        "orderDetailId": "d55847c2-5daa-6e28-fa4a-c3a434029aef",
         "products": [
           {
             "productId": 1,
@@ -22,32 +23,32 @@
         ]
       },
       {
-        "orderId": "9c412fcb-9155-4611-b03e-8b1a1a54b54b",
-        "orderDate": "2022-08-30 10:00:00",
+        "orderDetailId": "989a52b9-d2c0-415a-af6f-e412c0e31f33",
         "products": [
           {
-            "productId": 2,
-            "productName": "りんご",
-            "price": 150,
-            "quantity": 1
+            "productId": 101,
+            "productName": "ブロッコリー",
+            "price": 350,
+            "quantity": 2
           }
         ]
       }
     ]
   },
   {
+    "orderId": "9c412fcb-9155-4611-b03e-8b1a1a54b54b",
+    "orderDate": "2022-08-30 10:00:00",
     "userId": 2,
     "userName": "poc jiro",
-    "orders": [
+    "orderDetails": [
       {
-        "orderId": "0e452ba0-0a41-11d2-bd1b-00003987a102",
-        "orderDate": "2022-08-27 10:00:00",
+        "orderDetailId": "5901cdf6-ad68-4009-80f5-04995e2dd16d",
         "products": [
           {
-            "productId": 3,
-            "productName": "ぶどう",
-            "price": 400,
-            "quantity": 5
+            "productId": 2,
+            "productName": "りんご",
+            "price": 150,
+            "quantity": 1
           }
         ]
       }
