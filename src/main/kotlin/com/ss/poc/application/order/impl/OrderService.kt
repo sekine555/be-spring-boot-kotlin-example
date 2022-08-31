@@ -25,7 +25,7 @@ class OrderService(private val orderCustomRepository: IOrderCustomRepository) : 
         // Productドメイン生成
         val product = Product(command.productId, command.productName, command.price, command.quantity)
 
-        // 注文商品を追加する（追加されたかどうかを検証する必要あり）
+        // 注文商品を追加する
         val updateResult = orderCustomRepository.updateOrderProductByOrderIdAndUserId(
             command.orderId,
             command.userId,
